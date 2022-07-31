@@ -22,7 +22,7 @@ const SingUp = () => {
         setConfirmPassword(event.target.value);
     }
     if(user){
-        navigate('/shop')
+        navigate('/shipment')
     }
     
     const handleCreateUser = event => {
@@ -39,27 +39,29 @@ const SingUp = () => {
     }
 
     return (
-        <div className="form-container">
+        <div className='margin-top'>
+        <div className="form-container mt-5">
         <div>
         <h2 className="form-title">Sing Up</h2>
          <form onSubmit={handleCreateUser}>
          <div className="input-group">
-             <lebel htmlFor="name"> Email</lebel>
-             <input onBlur={handleEmailBlur} type="email" name="email" id='' required></input>
+             {/* <lebel htmlFor="name"> Email</lebel> */}
+             <input onBlur={handleEmailBlur} type="email" name="email" id=''  placeholder="Enter your email" required></input>
          </div>
          <div className="input-group">
-             <lebel htmlFor="name"> Password</lebel>
-             <input onBlur={handlePasswordBlur} type="password" name="password" id='' required ></input>
+             {/* <lebel htmlFor="name"> Password</lebel> */}
+             <input onBlur={handlePasswordBlur} type="password" name="password" id=''  placeholder="Password" required ></input>
          </div>
          <div className="input-group">
-             <lebel htmlFor="name"> Confirm Password</lebel>
-             <input onBlur={handleConfirmPasswordBlur} type="password" name="confirm-password" id='' required ></input>
+             {/* <lebel htmlFor="name"> Confirm Password</lebel> */}
+             <input onBlur={handleConfirmPasswordBlur} type="password" name="confirm-password" id=''  placeholder="Confirm Password" required ></input>
          </div>
          <p style={{color: 'red'}}>{error}</p>
        <input className="from-submit" type='submit' value="Sing Up" required></input>
          </form>
          <p>Already have an account ?<Link className="form-link" to="/login"> Login</Link></p>
         </div>
+     </div>
      </div>
     );
 };

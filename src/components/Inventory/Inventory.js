@@ -2,7 +2,7 @@ import React from 'react';
 
 const Inventory = () => {
     return (
-        <div>
+        <div className='margin-top'>
             <h1>This is inventory</h1>
         </div>
     );

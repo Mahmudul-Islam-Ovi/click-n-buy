@@ -1,9 +1,10 @@
 import './App.css';
 import AllRoute from './components/Routes/AllRoute';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div>
+    <div >
       <AllRoute></AllRoute>
     </div>
   );

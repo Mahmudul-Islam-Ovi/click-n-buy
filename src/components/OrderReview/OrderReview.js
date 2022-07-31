@@ -5,6 +5,7 @@ import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import useCart from './../../hooks/useCart';
+import { Button, Container, Row } from 'react-bootstrap';
 
 
 
@@ -25,8 +26,9 @@ const OrderReview = () => {
         deleteShoppingCart();
     }
     return (
-        <div className="shop-container">
-            <div className="product-container">
+        <div className="shop-container margin-top">
+           <Container>
+           <Row>
                  {
                     cart.map(product => <ReviewItem
                     key={product.id}
@@ -34,12 +36,13 @@ const OrderReview = () => {
                     handleRemove={handleRemove}
                     ></ReviewItem>)
                  }
-            </div>
+            </Row>
+           </Container>
             <div className="cart-container">
             <Cart cart={cart}>
-                <button 
+                <Button 
                 onClick={handlePlaceOrder} 
-                className="btn">Proceed Shipping</button>
+                className="btn">Proceed Shipping</Button>
            
             </Cart>
             </div>

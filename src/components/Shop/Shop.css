@@ -2,17 +2,22 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
 }
-.product-container{
-    border-right: 1px solid lightgray;
-    margin-right: 10px;
-    margin-left: 50px ;
+/* .product-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap :45px;
+} */
+
+.margin-top{
+    margin-top:80px;
+   
 }
 .search-container{
     background-color:rgb(58, 44, 44);
     text-align:center;
-    line-height:40px ;
+    line-height:50px ;
 }
 .search-container input{
     width:75%;
-    height: 20px;
+    height: 30px;
 }

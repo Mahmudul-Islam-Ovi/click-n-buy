@@ -1,21 +1,22 @@
 import React from 'react';
+import { Button, Card, Col } from 'react-bootstrap';
 
 const ReviewItem = (props) => {
     const {name,price,quantity,img,id}= props.product;
     return (
-        <div className="product">
-            <div>
-           <img className='img' src={img} alt="" />
-           </div>
-            <div className="product-details">
-            <h4 className="product-name">{name}</h4>
-            <p>Price: {price}</p>
+        <Col sm={12} md={6} xl={4}>
+            <Card className="mt-2" style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={img} />
+        <Card.Body>
+          <Card.Title>{name}</Card.Title>
+          <p>Price: {price}</p>
             <p>Quantity: {quantity}</p>
-            <button onClick={()=>props.handleRemove(id)}
-             className="btn">Remove</button>
-            </div>
+          <Button onClick={()=>props.handleRemove(id)}
+             className="btn">X</Button>
+        </Card.Body>
+      </Card>
             
-        </div>
+        </Col>
     );
 };
 
