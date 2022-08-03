@@ -7,44 +7,45 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
 
-
-
 const NavBars = () => {
-    const[user]= useAuthState(auth);
-   
-    const handleSingOut = ()=> {
-        signOut(auth);
-    }
-    return (
-        <div className="fixed-top" >
-              <Navbar bg="success" expand="lg">
-      <Container fluid>
-        <Navbar.Brand href="/shop">Click-N-Buy</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-           
-            <Link to="/shop">Shop</Link>
-            <Link to="/orders">Orders</Link>
-            <Link to="/inventory">Inventory</Link>
-            { user ?
-               <Button onClick={handleSingOut}>Sing Out</Button>
-               :
-                <Link to="/login">
-                    <Button>Login</Button>
-                    
+  const [user] = useAuthState(auth);
+  const handleSingOut = () => {
+    signOut(auth);
+  }
+  return (
+    <div className="fixed-top" >
+     
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <Container>
+            <Navbar.Brand as={Link} to="/">Click-N-Buy</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="me-auto">
+                <Nav.Link as={Link} to="/shop">Shop</Nav.Link>
+                <Nav.Link as={Link} to="/orders">Orders</Nav.Link>
+                <Nav.Link as={Link} to="/inventory">Inventory</Nav.Link>
+              </Nav>
+              <Nav>
+                <Nav.Link >
+                  {user ?
+                    <Button variant="info" onClick={handleSingOut}>Sing Out</Button>
+                    :
+                    <Link to="/login">
+                      <Button variant="info">Login</Button>
                     </Link>}
-            
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-        </div>
-    );
+
+                </Nav.Link>
+                <Nav.Link >
+                  <div>
+                    {user?.email}
+                  </div>
+                </Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+      </div>
+  );
 };
 
 export default NavBars;
