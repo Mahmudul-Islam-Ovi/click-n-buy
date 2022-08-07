@@ -1,3 +1,5 @@
+
+import PageTitle from '../PageTitle/PageTitle';
 import './Cart.css';
 
 
@@ -21,6 +23,7 @@ const Cart = (props) => {
     return (
         
         <div>
+              <PageTitle title='Cart'></PageTitle>
              <h3>Order Summary</h3>
             <h5>Items Ordered :{totalQuantity}</h5>
             <p>Total :{total.toFixed(2)}</p>

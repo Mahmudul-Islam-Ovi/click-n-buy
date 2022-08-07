@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import useProducts from '../../hooks/useProducts';
+// import useProducts from '../../hooks/useProducts';
 import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
@@ -10,12 +10,12 @@ import { Button, Container, Row } from 'react-bootstrap';
 
 
 const OrderReview = () => {
-    const [products] = useProducts();
-    const [cart,setCart] = useCart(products);
+    // const [products] = useProducts();
+    const [cart,setCart] = useCart();
     const navigate = useNavigate();
 
     const handleRemove = id =>{
-        const newCart = cart.filter(product => product.id !== id);
+        const newCart = cart.filter(product => product._id !== id);
         setCart(newCart);
         removeFromDb(id);
 
@@ -31,7 +31,7 @@ const OrderReview = () => {
            <Row>
                  {
                     cart.map(product => <ReviewItem
-                    key={product.id}
+                    key={product._id}
                     product={product}
                     handleRemove={handleRemove}
                     ></ReviewItem>)

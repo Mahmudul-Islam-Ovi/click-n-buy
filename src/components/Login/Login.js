@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PageTitle from '../PageTitle/PageTitle';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -50,6 +51,7 @@ const Login = () => {
     }
     return (
         <div className=" margin-top">
+              <PageTitle title='Login'></PageTitle>
             <div className="form-container mt-5 ">
                 <div className="">
                     <h2 className="form-title">Login</h2>

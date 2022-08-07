@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import PageTitle from '../PageTitle/PageTitle';
 
 
 const Shipment = () => {
@@ -26,6 +27,7 @@ const Shipment = () => {
     }
     return (
         <div className='margin-top'>
+             <PageTitle title='Shipment'></PageTitle>
         <div className="form-container mt-5">
             <div>
                 <h2 className="form-title">Shipping Information</h2>

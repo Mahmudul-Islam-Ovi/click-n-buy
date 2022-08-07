@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import PageTitle from '../PageTitle/PageTitle';
 
 
 const SingUp = () => {
@@ -59,6 +60,7 @@ const SingUp = () => {
 
     return (
         <div className='margin-top'>
+             <PageTitle title='Sing Up'></PageTitle>
             <div className="form-container mt-5">
                 <div>
                     <h2 className="form-title">Sing Up</h2>
