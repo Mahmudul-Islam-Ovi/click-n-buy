@@ -2,14 +2,13 @@ import { useState, useEffect } from 'react';
 import { getStoredCart } from '../utilities/fakedb';
 
 const useCart = () => {
-
     const [cart,setCart]= useState([]);
     useEffect(() =>{   
         // if(products.length){
             const saveCart= getStoredCart();
             const storedCart =[];
             const keys = Object.keys(saveCart);
-            fetch('http://localhost:5000/productByKeys',{
+            fetch('https://click-n-buy.herokuapp.com/productByKeys',{
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(keys)

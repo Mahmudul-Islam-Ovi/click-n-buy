@@ -17,13 +17,13 @@ const Shop = () => {
     const [products,setProducts] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products?page=${page}&size=${size}`)
+        fetch(`https://click-n-buy.herokuapp.com/products?page=${page}&size=${size}`)
         .then(res => res.json())
         .then(data => setProducts(data))
     },[page,size]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/productCount')
+        fetch('https://click-n-buy.herokuapp.com/productCount')
             .then(res => res.json())
             .then(data => {
                 const count = data.count;
@@ -33,7 +33,7 @@ const Shop = () => {
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:5000/products/')
+        fetch('https://click-n-buy.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
