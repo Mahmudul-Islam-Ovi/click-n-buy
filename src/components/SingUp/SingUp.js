@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import PageTitle from '../PageTitle/PageTitle';
+import logo from '../../images/Click-N-Buy.png';
 
 
 const SingUp = () => {
@@ -55,14 +56,15 @@ const SingUp = () => {
         await updateProfile({ displayName: name });
           console.log('Updated profile');
           navigate("/shop");
-
     }
-
     return (
         <div className='margin-top'>
              <PageTitle title='Sing Up'></PageTitle>
             <div className="form-container mt-5">
                 <div>
+                <div className="text-center">
+               <img className="w-50" src={logo} alt="" />
+               </div>
                     <h2 className="form-title">Sing Up</h2>
                     <form onSubmit={handleCreateUser}>
                         <div className="input-group">

@@ -15,7 +15,7 @@ const Product = (props) => {
   return (
     <Col sm={12} md={6} xl={4}>
       <PageTitle title='Product'></PageTitle>
-      <Card className="m-3" style={{ width: '22rem' }}>
+      <Card className="m-2" style={{ width: '22rem' }}>
         <Card.Img variant="top" src={img} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>

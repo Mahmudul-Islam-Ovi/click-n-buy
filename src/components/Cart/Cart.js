@@ -2,8 +2,6 @@
 import PageTitle from '../PageTitle/PageTitle';
 import './Cart.css';
 
-
-
 const Cart = (props) => {
      const {cart} = props;
     let totalQuantity = 0;
@@ -24,12 +22,12 @@ const Cart = (props) => {
         
         <div>
               <PageTitle title='Cart'></PageTitle>
-             <h3>Order Summary</h3>
-            <h5>Items Ordered :{totalQuantity}</h5>
-            <p>Total :{total.toFixed(2)}</p>
-            <p>Shipping :{shipping}</p>
-            <p>tax :{tax.toFixed(2)}</p>
-            <p>Grand Total :{grandTotal.toFixed(2)}</p>
+             <h2 className='text-success'>Order Summary</h2>
+            <h4>Items Ordered :{totalQuantity}</h4>
+            <h5>Total- ${total.toFixed(2)}</h5>
+            <h5>Shipping- ${shipping}</h5>
+            <h5>Tax- ${tax.toFixed(2)}</h5>
+            <h5>Grand Total- ${grandTotal.toFixed(2)}</h5>
             {
                 props.children
             }

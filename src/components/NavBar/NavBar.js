@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
+import logo from '../../images/Logo-2.png';
+import './NavBar.css';
 
 const NavBars = () => {
   const [user] = useAuthState(auth);
@@ -17,7 +19,9 @@ const NavBars = () => {
      
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand as={Link} to="/">Click-N-Buy</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/">
+              <img className='logoImg' src={logo} alt="" />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">

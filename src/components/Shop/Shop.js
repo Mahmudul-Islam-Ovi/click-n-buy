@@ -6,6 +6,7 @@ import './Shop.css';
 import { Link } from 'react-router-dom';
 import { Button, Container, Row } from 'react-bootstrap';
 import useCart from '../../hooks/useCart';
+import Slider from '../Slider/Slider';
 
 const Shop = () => {
 
@@ -81,7 +82,7 @@ const Shop = () => {
 
     }
     return (
-        <div className='bg-info'>
+        <div className=''>
 
             <div className="search-container margin-top">
                 <input
@@ -90,7 +91,7 @@ const Shop = () => {
                     type="text"
                 ></input>
             </div>
-
+            <Slider></Slider>
             <div className="shop-container">
 
                 <Container >

@@ -7,6 +7,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PageTitle from '../PageTitle/PageTitle';
+import logo from '../../images/Click-N-Buy.png';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -50,18 +51,20 @@ const Login = () => {
         signInWithEmailAndPassword(email, password)
     }
     return (
-        <div className=" margin-top">
+        <div className=" margin-top ">
+               
               <PageTitle title='Login'></PageTitle>
             <div className="form-container mt-5 ">
-                <div className="">
+                <div>
+               <div className="text-center">
+               <img className="w-50 text-center" src={logo} alt="" />
+               </div>
                     <h2 className="form-title">Login</h2>
                     <form onSubmit={handleUserSingIn}>
                         <div className="input-group">
-                            {/* <lebel htmlFor="name"> Email</lebel> */}
                             <input onBlur={handleEmailBlur} type="email" name="email" id='email' placeholder="Enter your email" required></input>
                         </div>
                         <div className="input-group">
-                            {/* <lebel htmlFor="name"> Password</lebel> */}
                             <input onBlur={handlePasswordBlur} type="password" name="password" id='password' placeholder="Enter your password" required></input>
                         </div>
                         <p style={{ color: 'red' }}>{error?.message}</p>
