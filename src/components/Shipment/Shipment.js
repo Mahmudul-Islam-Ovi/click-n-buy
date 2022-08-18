@@ -22,8 +22,16 @@ const Shipment = () => {
 
     const handleCreateUser = event => {
         event.preventDefault();
-        const shipping ={name,address,phoneNumber};
+        const shipping ={
+            email:user.email,
+            name :name,
+            address :address,
+            phoneNumber :phoneNumber
+        };
         console.log(shipping);
+        
+        event.target.reset();
+        
     }
     return (
         <div className='margin-top'>

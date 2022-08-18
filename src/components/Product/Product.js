@@ -6,11 +6,17 @@ import './Product.css';
 import { Button, Col } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import PageTitle from '../PageTitle/PageTitle';
+import { useNavigate } from 'react-router-dom';
 
 
 const Product = (props) => {
-  const { name, img, price, stock, seller, ratings } = props.product;
+  const {_id, name, img, price, stock, seller, ratings } = props.product;
   const cartIcon = <FontAwesomeIcon icon={faShoppingCart} />
+  const navigate = useNavigate()
+
+  const handleSingleProduct = (id) => {
+    navigate(`/productById/${id}`)
+  }
 
   return (
     <Col sm={12} md={6} xl={4}>
@@ -30,6 +36,8 @@ const Product = (props) => {
           />
           <br />
           <Button className="mt-2" onClick={() => props.handleAddToCart(props.product)}>{cartIcon} Add to cart</Button>
+          <br></br>
+          <Button className="mt-2" onClick={()=>handleSingleProduct(_id)}>{cartIcon} Show Details</Button>
         </Card.Body>
       </Card>
     </Col>
