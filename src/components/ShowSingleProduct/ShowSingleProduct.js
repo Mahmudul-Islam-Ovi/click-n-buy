@@ -11,6 +11,7 @@ const ShowSingleProduct = () => {
     return (
         <div className="margin-top p-5">
             <h1>This is a product : {product.name}</h1>
+            <h3>Only {product.shipping} Product has limit</h3>
         </div>
     );
 };

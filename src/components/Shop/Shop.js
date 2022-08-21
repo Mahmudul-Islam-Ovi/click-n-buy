@@ -8,10 +8,11 @@ import { Button, Container, Row } from 'react-bootstrap';
 import useCart from '../../hooks/useCart';
 import Slider from '../Slider/Slider';
 
+
 const Shop = () => {
 
     const [cart, setCart] = useCart();
-    const [displayProducts, setDisplayProducts] = useState([]);
+    // const [displayProducts, setDisplayProducts] = useState([]);
     const [pageCount, setPageCount] = useState(0);
     const [page, setPage] = useState(0);
     const [size, setSize] = useState(10);
@@ -33,14 +34,14 @@ const Shop = () => {
             });
     }, []);
 
-    useEffect(() => {
-        fetch('https://click-n-buy.herokuapp.com/products')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data);
-                setDisplayProducts(data);
-            });
-    }, []);
+    // useEffect(() => {
+    //     fetch('https://click-n-buy.herokuapp.com/products')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setProducts(data);
+    //             // setDisplayProducts(data);
+    //         });
+    // }, []);
 
     // useEffect(() => {
     //     if (products.length) {
@@ -74,23 +75,9 @@ const Shop = () => {
         addToDb(product._id);
     }
 
-    const handleSearch = event => {
-        const searchText = (event.target.value);
-        const matchedProduct = products.filter(product =>
-            product.name.toLowerCase().includes(searchText.toLowerCase()));
-        setDisplayProducts(matchedProduct);
-
-    }
     return (
         <div className=''>
-
-            <div className="search-container margin-top">
-                <input
-                    placeholder="Search Product"
-                    onChange={handleSearch}
-                    type="text"
-                ></input>
-            </div>
+            {/* <SearchPd></SearchPd> */}
             <Slider></Slider>
             <div className="shop-container">
 

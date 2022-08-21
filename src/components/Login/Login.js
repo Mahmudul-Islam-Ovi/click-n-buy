@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PageTitle from '../PageTitle/PageTitle';
 import logo from '../../images/Click-N-Buy.png';
+import axios from 'axios';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -46,10 +47,15 @@ const Login = () => {
     if (user) {
         navigate(from, { replace: true });
     }
-    const handleUserSingIn = event => {
+    const handleUserSingIn = async(event) => {
         event.preventDefault();
-        signInWithEmailAndPassword(email, password)
+        await signInWithEmailAndPassword(email, password);
+        const {data}= await axios.post('http://localhost:5000/login',{email});
+        localStorage.setItem('accessToken',data.accessToken);
+        navigate(from, { replace: true });
     }
+
+    
     return (
         <div className=" margin-top ">
                

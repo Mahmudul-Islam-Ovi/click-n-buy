@@ -11,6 +11,7 @@ import SingUp from '../SingUp/SingUp';
 import RequireAuth from '../RequireAuth/RequireAuth';
 import Shipment from '../Shipment/Shipment';
 import ShowSingleProduct from '../ShowSingleProduct/ShowSingleProduct';
+import OrderInfo from '../Shipment/OrderInfo';
 
 const AllRoute = () => {
     return (
@@ -33,6 +34,7 @@ const AllRoute = () => {
                 } />
                 <Route path="/login" element={<Login />} />
                 <Route path="/singUp" element={<SingUp />} />
+                <Route path="/orderInfo" element={< OrderInfo/>} />
                 <Route path="/productById/:productId" element={<ShowSingleProduct />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>

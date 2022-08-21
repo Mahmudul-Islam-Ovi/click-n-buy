@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 // import useProducts from '../../hooks/useProducts';
-import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
+import {removeFromDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import useCart from './../../hooks/useCart';
@@ -22,7 +22,7 @@ const OrderReview = () => {
     const handlePlaceOrder = ()=>{
         navigate('/shipment');
         setCart([]);
-        deleteShoppingCart();
+        // deleteShoppingCart();
     }
     return (
         <div className="shop-container margin-top">
